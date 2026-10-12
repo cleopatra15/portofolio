@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candle bliss</title>
+    <link rel="stylesheet" href="candles.css">
+    <script src="candles.js"></script>
+</head>
+<body>
+    <header class="site-header"> 
+        <!--logo stanga sus-->
+        <a href="#acasa" class="logo">
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="logo-text">Candle bliss</span>
+        </a>
+
+        <!--meniu sus-->
+        <nav class="main-nav" aria-label="Navigare principala">
+            <ul>
+                <li><a href="#acasa">Acasa</a></li>
+                <li><a href="#slider">Inspiratie</a></li>
+                <li class="has-submenu">
+                    <a href="#colectii">Colectii</a>
+                    <ul class="submenu">
+                        <li><a href="colectii.html#aromaterapie">Toate colectiile</a></li>
+                        <li><a href="oferte.html#oferte">Oferte speciale</a></li>
+                        <li><a href="colectii.html#cadouri">Seturi cadou</a></li>
+                    </ul>
+                </li>
+                <li><a href="#articole">Articole</a></li>
+                <li><a href="#contact">Contact & Sugestii</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    
+
+    <main>
+        <section id="acasa" class="princ">
+
+            <!--scurta descriere + link pt colectii si articole(alte pagini)-->
+            <div class="princ-text">
+                <h1>Lumânări care aprind emoții</h1>
+                <p>
+                    Bine ai venit in lumea Candle Bliss! Suntem un atelier dedicat lumânărilor naturale, create manual cu grijă și pasiune. Combinăm arome autentice și design simplu pentru a aduce în case momente de calm, frumusețe și lumină.
+                </p>
+                <div class="princ-b">
+                    <a href="#colectii" class="btn1">Vezi colecțiile</a>
+                    <a href="#articole" class="btn2">Ultimele articole</a>
+                </div>
+            </div>
+
+            <!--componente lumanare-->
+            <div class="princ-candle">
+                <div class="candle">
+                    <div class="candle-flame"></div>
+                    <div class="candle-body"></div>
+                    <div class="candle-plate"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--sectiune cu imagini care se deruleaza-->
+        <section id="slider" class="slider-section">
+            <h2>Inspirație din atelier</h2>
+            <p class="section-subtitle">
+                Iată câteva dintre produsele noastre...
+            </p>
+
+            <div class="slider">
+                <figure class="slide">
+                <img src="https://irishomefragrances.com/cdn/shop/products/INAC8147LA_1.jpg?v=1751867752&width=2048" alt="Lumanare de soia pe o masa de lemn">
+                <figcaption>Aromă de lavanda</figcaption>
+                </figure>
+
+                <figure class="slide">
+                <img src="https://www.lucidcandle.com/cdn/shop/products/LC10005G_1200x1200.jpg?v=1604013991" alt="3 lumanari de ceara de soia">
+                <figcaption>Relaxare simlpă</figcaption>
+                </figure>
+                
+                <figure class="slide">
+                    <img src="https://www.newlands.ie/cdn/shop/files/Christmas_Candles_-_All_600x600.jpg?v=1699297830" alt="set 3 lumanari cadou Craciun">
+                    <figcaption>Seturi cadou</figcaption>
+                </figure>
+                
+            </div>
+        </section>
+
+
+
+        <!--colectii(varianta scurta pe pagina principala)-->
+        <section id="colectii" class="collections-section">
+
+            <h2>Colecții & oferte</h2>
+            <p class="section-subtitle">
+                Câeva dintre cele mai populare lumânari din atelierul Candle Bliss.
+            </p>
+
+            <div class="collections-grid">
+                <article class="collection-card">
+                    <button class="wishlist-btn" title="Adaugă la favorite">❤</button>
+                    <img class="collection-image" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTacTDRnmMc2Xn6Yo1bgc6ekhqz_FxKrw_t-dvojZmnBELpTy4PNPAcF_VXG0M5aq1sWLxSWf3xNs1KANw-pRWXtaYy9I96Q9daLaByggLD&usqp=CAc" alt="lumanare lavanda">
+                    <h3>Aromaterapie · "Lavandă eternă"</h3>
+                    <p class="collection-desc">
+                        Lumânare din ceară de soia cu esență de lavandă, perfectă pentru momente liniștite.
+                    </p>
+                    <p class="collection-price">65 lei · 180 ml</p>
+                    <p class="collection-tag">Aromaterapie · Relaxare</p>
+                </article>
+
+                <article class="collection-card">
+                    <button class="wishlist-btn" title="Adaugă la favorite">❤</button>
+                    <img class="collection-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR2eq99u37KSKTptQC37f4yWnK-5WgK_NpwA&s" alt="lumanare simpla alba minimalista">
+                    <h3>Minimalist · "Bumbac proaspat"</h3>
+                    <p class="collection-desc">
+                       Design simplu, recipient transparent, aromă curată de bumbac proaspăt pentru camere aerisite.
+                    </p>
+                    <p class="collection-price">72 lei · 200 ml</p>
+                    <p class="collection-tag">Decor · Stil minimalist</p>
+                </article>
+
+                <article class="collection-card">
+                    <button class="wishlist-btn" title="Adaugă la favorite">❤</button>
+                    <img class="collection-image" src="https://m.media-amazon.com/images/I/81f4wXMqwHL.jpg" alt="set lumanari de Craciun">
+                    <h3>Set cadou "Calm & Cozy"</h3>
+                    <p class="collection-desc">
+                       Trei lumânări mini cu arome complementare, perfecte pentru un cadou de Crăciun.
+                    </p>
+                    <p class="collection-price">120 lei · set 3 bucati</p>
+                    <p class="collection-tag">Cadouri · Editie limitata</p>
+                </article>
+            </div>
+
+            <div class="colections-more">
+                <a href="colectii.html#colectii" class="btn2">Vezi toate colecțiile</a>
+            </div>
+
+        </section>
+
+
+        <!--articole(varianta scurta pt pagina principala)-->
+        <section id="articole" class="articles-section">
+            <h2>Ultimele articole</h2>
+            <p class="section-subtitle">
+                Sfaturi si povești scurte despre lumânările parfumate și îngrijirea lor.
+            </p>
+
+            <div class="articles-grid">
+                <article class="article-card">
+                    <img src="https://media.istockphoto.com/id/1468277274/ro/fotografie/lum%C3%A2n%C4%83ri-aprinse-%C8%99i-odorizant-de-stuf-pe-mas%C4%83-%C3%AEn-interior-atmosfer%C4%83-confortabil%C4%83.jpg?s=612x612&w=0&k=20&c=jLPFKbC9XtoAM1Ende1aU63AQ1Pj_A7fkRhxIA_wYIs=" alt="lumanari cozy">
+                    <div class="article-content">
+                        <h3>Cum îngrijești fitilul unei lumânări</h3>
+                        <p class="article-excerpt">
+                            Un fitil tuns corect ajută lumânarea să ardă mai uniform, fără fum și fără să risipească ceară...
+                        </p>
+                        <a href="articole.html#articol1" class="article-link">Citește mai mult</a>
+                    </div>  
+                </article>
+
+                 <article class="article-card">
+                    <img src="https://www.papernstitchblog.com/wp-content/uploads/2023/02/soy-candles-unique-pottery-vessels.jpg" alt="multe lumanari mici">
+                    <div class="article-content">
+                        <h3>Diferența dintre ceara de soia si parafina</h3>
+                        <p class="article-excerpt">
+                            Ceara de soia este mai prietenoasă cu mediul și arde mai lent, în timp ce parafina este mai ieftină, dar...
+                        </p>
+                        <a href="articole.html#articol2" class="article-link">Citește mai mult</a>
+                    </div>  
+                </article>
+
+                    <article class="article-card">
+                    <img src="https://scoopmyart.com/wp-content/uploads/2024/02/IMG_20240220_225725.jpg" alt="lumanare florala">
+                    <div class="article-content">
+                        <h3>Idei de cadou cu lumânări parfumate</h3>
+                        <p class="article-excerpt">
+                            Combină arome complementare și adaugă o mica felicitare scrisă de mână pentru un cadou memorabil...
+                        </p>
+                        <a href="articole.html#articol3" class="article-link">Citește mai mult</a>
+                    </div>  
+                </article>
+            </div>
+            <div class="articles-more">
+                <a href="articole.html#articole" class="btn2">Vezi toate articolele</a>
+            </div>
+        </section>
+
+
+        <section id="contact" class="contact-section">
+            <h2>Contact & sugestii</h2>
+            <p class="section-subtitle">
+                Scrie-ne dacă ai întrebări, sugestii sau idei pentru noi colecții de lumânări.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>
+                        Atelierul <strong>Candle Bliss</strong> este un proiect creat pentru relaxarea ta.
+                        Mesajele tale contează.
+                    </p>
+                    <ul class="contact-list">
+                        <li><strong>Email:</strong>contact@candlebliss.ro</li>
+                        <li><strong>Telefon:</strong> 0736091903</li>
+                        <li><strong>Program:</strong> Luni-Vineri, 10:00-18:00</li>
+                    </ul>
+                </div>
+
+                <!--date de contact + formular pentru intrebari si sugestii-->
+                <form class="contact-form">
+                <div class="form-field">
+                    <label for="nume">Nume</label>
+                    <input type="text" id="nume" name="nume" placeholder="Numele tau" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="adresa@exemplu.com" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="tip-mesaj">Tip mesaj</label>
+                    <select id="tip-mesaj" name="tip-mesaj">
+                        <option value="intrebare">întrebare</option>
+                        <option value="sugestie">Sugestie</option>
+                        <option value="recenzie">Recenzie despre lumânări</option>
+                        <option value="alta">Alt tip de mesaj</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="mesaj">Mesajul tău</label>
+                    <textarea id="mesaj" name="mesaj" rows="5" placeholder="Spune-ne ce ai dori sa ne transmiți..." required></textarea>
+                </div>
+
+                <div class="form-field form-consent">
+                    <label>
+                        <input type="checkbox" name="acord" required>
+                        Sunt de acord ca mesajul meu să fie prelucrat.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn1">Trimite mesajul</button>
+            </form>
+            </div>
+
+            
+
+        </section>
+
+        <section id="auth-section" style="padding: 1rem; text-align: center; background: #fdf2e9;">
+             <div id="login-controls">
+                <input type="text" id="username" placeholder="Utilizator">
+                <button id="login-btn" class="btn1" style="padding: 5px 15px;">Login</button>
+            </div>
+            <div id="user-profile" style="display:none;">
+                <span id="welcome-msg"></span>
+                <button id="logout-btn" style="border:none; background:none; color:red; cursor:pointer;">Logout</button>
+            </div>
+        </section>
+
+        <section id="reviews-section" class="articles-section">
+            <h2>Recenzii Clienți </h2>
+            <div id="reviews-container" class="articles-grid"></div>
+            <div style="text-align:center; margin-top:1rem;">
+                <button id="load-reviews" class="btn2">Încarcă Recenzii</button>
+                <button id="delete-reviews" class="btn1" style="background:gray;">Șterge Recenzii</button>
+            </div>
+        </section>
+        
+
+
+        
+
+
+        <section id="wishlist-area" style="display:none; padding: 2rem; background: rgba(255,255,255,0.5);">
+            <h2>Produsele tale preferate ❤️</h2>
+            <div id="wishlist-items" class="collections-grid"></div>
+        </section>
+    </main> 
+    <footer>
+    </footer>
+
+    <div id="mood-container">
+        <label for="mood-select">Alege atmosfera:</label>
+        <select id="mood-select">
+            <option value="original">Original (Candle Bliss)</option>
+            <option value="evening">Seară (Lumină caldă)</option>
+            <option value="morning">Dimineață (Fresh)</option>
+        </select>
+    </div>
+
+
+    
+
+
+</body>
+</html>

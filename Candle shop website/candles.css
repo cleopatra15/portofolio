@@ -1,0 +1,769 @@
+/* ca dimeniunile sa ramana cele specificate mereu*/
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0; /*fara margine suplimentara*/ 
+    font-family: sans-serif;
+    line-height: 1.6;
+    background: radial-gradient(circle at top left, #ffe5cf, #fff8f0);
+    color: #3a2b28;
+}
+
+img {
+    max-width: 100%; /*elementul nu depaseste dimensiunea container ului*/
+    height: auto;
+    display: block;
+}
+
+
+/*pentru link-uri: sa fie subliniate doar cand cursorul este deasupra lor*/
+a {
+    color:#b25d3b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.site-header {
+    position: sticky; /*ca sa ramana in partea de sus cand dam scroll in jos*/
+    top: 0; /*sa samana fix pe marginea de sus */
+    z-index:10; /*pentru a nu fi acoperita de alte elemente*/
+    display: flex;
+    justify-content: space-between; /*logo in stanga si liink urile in drapta*/
+    align-items: center; /*pe axa vericala sa fie in mijloc*/
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(255, 248, 240, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #f0e0d4;
+
+}
+
+.logo {
+    display: inline-flex; /*nu ocupa toata latimea randului + flex*/
+    align-items: center; /*in centru pe axa verticala*/
+    gap: 0.6rem;
+}
+
+.logo-mark {
+    width: 1.2rem;
+    height: 1.9rem;
+    border-radius: 50% 50% 50% 50% / 70% 70% 40% 40%; /*forma logo ului*/
+    background: radial-gradient(circle at 30% 10%, #fffbe6, #ffb85f); /*cercul se formeaza la 30% din latime si 10% din inatlime, adica in coltul din stanga sus pentru a forma o lumina mai puterica la flacara */
+    box-shadow: 0 0 14px rgba(255, 184, 95, 0.9); /*umbra pentru logo*/
+}
+
+/*oentru textul de la logo- Candle Bliss*/
+.logo-text {
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform:uppercase;
+    font-size:0.9rem;
+    color: #3a2b28;
+}
+
+
+.main-nav > ul { /*se aplica doar listei din main nav*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.main-nav a {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #3a2b28;
+    padding-bottom: 0.15rem;
+    position: relative; /*devine punct de referinta pt elem din interiorul lui care vor avea position: absolute*/
+}
+
+.main-nav a::after {
+    content:"";
+    position: absolute; /*pentru link uri*/
+    left: 0;
+    bottom: 0; /*apare in stanga jos a link ului, dar are latime=0, deci la inceput nu se vede*/
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #d47c5a, #f0b78a); /*90deg ca se formeze o linie orizontala*/
+    transition: width 0.25s ease; /*atunci cand se scimba grosimea tranzitia se va face in 0.25s*/
+}
+
+.main-nav a:hover::after { /*se formeaza cand cursorul este deasupra link-urilor*/
+    width: 100%;
+}
+
+.has-submenu {
+    position: relative; /*ca submenu sa fie raportat la li*/
+}
+
+.submenu {
+    list-style: none;
+    margin:0;
+    padding: 0.4rem 0;
+    position: absolute; /*se raporteaza la COLECTII*/
+    top:100%;  /*sa fie lipita de partea de sus*/
+    left:0;  /*si in stanga*/
+    min-width: 180px;
+    background-color:#fff8f0;
+    border-radius: 0.6rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    opacity:0; /*e transparenta la inceput*/
+    transform: translateY(8px); /*coboara mai jos cand e  transparent ac atunci cand apare sa se ridice in tranzitie*/
+    pointer-events: none; /* nu se intampla nimic daca trecem cursorul peste*/
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    /*se estompeaza din transparent in vizibil si trece de la translateY(8) la translateY(0)*/
+    z-index: 10;
+}
+
+.submenu li a{
+    display: block; /*ocupa tot spatiu ca sa outem sa dam click pe toata zona nu doar pe text*/
+    padding: 0.45rem 0.9rem;
+    font-size:0.8rem;
+    letter-spacing: 0.08em;
+    text-transform:uppercase;
+    color: #3a2b28;
+    white-space:nowrap; /*nu trece pe alt rand daca e lung textul*/
+}
+
+.has-submenu:hover .submenu, .has-submenu:focus-within .submenu {
+    /* meniul devine vizibil si il putem utiliza atunci cand ajungem la COLECTII*/
+    opacity:1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.submenu li a:hover {
+    /*fiecare sectiune din submenu devine mai inchisa la culoare cand avem cursorul pe ea*/
+    background-color: #f5e3d5;
+}
+
+main {
+    padding: 2.5rem 1.5rem 3rem;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem 1rem 2rem;
+    font-size: 0.9rem;
+    color: #7d6d66;
+    border-top: 1px solid #f0e0d4;
+    background-color: #fff8f0;
+}
+
+.princ {
+    /* o coloana text si o coloana animatia cu lumanare*/
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: center;
+    /*innmijloc pe aza verticala*/
+    margin-bottom: 3.5rem;
+}
+
+.princ-text h1 {
+    margin-top:0;
+    font-size: clamp(2.1rem, 3vw, 2.7rem);
+    margin-bottom: 1rem;
+}
+
+.princ-b {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+
+/*cele doua butoane care duc la colectii si articole*/
+.btn1, .btn2 {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*aspectul celor doua butoane*/
+.btn1, .btn2 {
+    background: linear-gradient(135deg, #d47c5a, #f0b78a);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition:transform 0.2s ease, box-shadow 0.3s ease;
+
+}
+
+.btn1:hover, .btn2:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 26px rgba(0, 0, 0, 0.2);
+}
+
+
+/*lumanarea*/
+.princ-candle {
+    text-align: center;
+}
+
+.candle {
+    display: inline-flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.3rem 1rem 1.8rem;
+    border-radius: 1.5rem;
+    background: linear-gradient(180deg, #ffe1c9, #ffffff);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/*flacara*/
+.candle-flame {
+    width: 1.9rem;
+    height:3rem;
+    border-radius: 50% 50% 50% 50% / 80% 80% 45% 45%;
+    background: radial-gradient(circle at 30% 10%, #fffbe6, #ffb85f);
+    box-shadow: 0 0 18px rgba(255, 184, 95, 0.9);
+    transform-origin: bottom center;
+    animation: flame-dance 2.5s infinite alternate ease-in-out;
+}
+
+.candle-body {
+    width: 3rem;
+    height: 10rem;
+    border-radius: 1.6rem 1.6rem 0.2rem 0.2rem;
+    background: linear-gradient(180deg, #ffffff, #ffe4cf);
+    position: relative;
+    box-shadow: 
+        inset 0 0 0 1px rgba(0, 0, 0, 0.05), 
+        0 6px 10px rgba(0,0,0,0.15);
+}
+
+.candle-body {
+    width: 3rem;
+    height: 10rem;
+    border-radius: 1.6rem 1.6rem 0.2rem 0.2rem;
+    background: linear-gradient(180deg, #ffffff, #ffe4cf);
+    position: relative;
+    box-shadow: 
+        inset 0 0 0 1px rgba(0, 0, 0, 0.05), 
+        0 6px 10px rgba(0,0,0,0.15);
+}
+
+
+/*pentru bucatica mai inchisa de ceara din partea de sus a lumanarii*/
+.candle-body::before {
+    content:"";
+    position: absolute;
+    top:0.5rem;
+    left: 0.4rem;
+    right: 0.4rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: radial-gradient(circle at 50% 20%, #ffe74d, #ffd0af);
+}
+
+
+.candle-plate {
+    width: 6rem;
+    height: 1rem;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #9c7c68, #ab8d75);
+    box-shadow: 0 14px 26px rgba(0,0,0,0.25);
+
+}
+
+/*animatia cu lumanarea care arde*/
+@keyframes flame-dance {
+    0% {
+        transform: translateY(0) scale(1) rotate(-3deg);
+        box-shadow: 0 0 14px rgba(255, 184, 95, 0.7);
+        opacity: 0.95;
+    }
+
+    50% {
+        transform: translateY(-5px) scale(1.05) rotate(2deg);
+        box-shadow: 0 0 22px rgba(255, 198, 120, 1);
+        opacity:1;
+    }
+
+    100% {
+        transform: translateY(-3px) scale(0.98) rotate(-1deg);
+        box-shadow: 0 0 12px rgba(255, 170, 90, 0.6);
+        opacity: 0.9;
+    }
+    }
+
+
+    /*pozele care deruleaza*/
+    .slider-section {
+        margin-bottom: 3.5rem;
+    }
+
+    .slider-section h2 {
+        text-align:center;
+        margin-bottom: 0.25rem;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        color: #7d6d66;
+    }
+
+    .slider {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        aspect-ratio: 16 / 9;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+        background-color: #9d9275;
+    }
+
+
+    .slide {
+        position: absolute;
+         inset: 0;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: #fff;
+        animation: slideshow 12s infinite;
+    }
+
+
+    .slide img {
+        width:100%;
+        height:100%;
+        object-fit: cover;
+    }
+
+    .slide figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        
+    }
+
+    .slide:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .slide:nth-child(2) {
+        animation-delay: 4s;
+    }
+
+    .slide:nth-child(3) {
+        animation-delay: 8s;
+    }
+
+
+    @keyframes slideshow {
+        0% {
+            opacity: 0;
+        }
+        5% {
+            opacity: 1;
+        }
+        30% {
+            opacity: 1;
+        }
+        35% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+
+
+    /*secriunea COLECTII & OFERTE*/
+    .collections-section {
+        margin-bottom: 3.5rem;
+    }
+
+    .collections-section h2 {
+        text-align: center;
+        margin-bottom: 0.25rem;
+    }
+
+    .collections-section .section-subtitle {
+        text-align:center;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        color: #7d6d66;
+        font-size: 0.95rem;
+    }
+
+    .collections-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 1.5rem;
+    }
+
+    .collection-card {
+        background-color: #ffffff;
+        border-radius: 1rem;
+        padding: 1.2rem 1.4rem;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+    }
+
+    .collection-card h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .collection-desc {
+        margin-bottom: 0.75rem;
+        color: #7d6d66;
+        font-size: 0.95rem;
+    }
+
+    .collection-price {
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+    }
+
+    .collection-tag {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12rem;
+        color: #b25d3b;
+    }
+
+
+    /*ecrane medii*/
+    @media (max-width: 900px) {
+        .princ {
+            grid-template-columns: minmax(0,1fr);
+        }
+
+        .collections-grid {
+            grid-template-columns: repeat(2, minmax(0,1fr));
+        }
+
+        .articles-grid {
+            grid-template-columns: repeat(2, minmax(0,1fr));
+        }
+
+        .contact-grid {
+            grid-template-columns: minmax(0,1fr);
+        }
+
+        .slider {
+            max-width:100%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        main {
+            padding: 2rem 1rem 2.5rem;
+        }
+
+        .collections-grid {
+            grid-template-columns: minmax(0,1fr);
+        }
+
+        .articles-grid {
+            grid-template-columns: minmax(0,1fr);
+        }
+        
+        .princ {
+            gap: 2rem;
+        }
+    }
+
+    .articles-section{
+        margin-bottom: 3.5rem;
+    }
+
+    .articles-section h2 {
+        text-align: center;
+        margin-bottom: 0.25rem;
+    }
+
+    .articles-section .section-subtitle {
+        text-align:center;
+        margin-top: 0;
+        margin-bottom:2rem;
+        color: #7d6d66;
+        font-size: 0.95rem;
+    }
+    .article-full + .article-full {
+        margin-top: 0.5rem;
+    }
+
+    .article-full {
+        max-width:800px;
+        margin: 0 auto 3rem;
+    }
+
+    .article-full h3{
+        margin-top:0;
+        margin-bottom:0.75rem;
+    }
+
+    .article-full img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.8rem;
+        display: block;
+    }
+
+    .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 1.5rem;
+    }
+
+    .article-card {
+        background-color: #ffffff;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .article-card img {
+        width: 100%;
+        height: 180px;
+        object-fit:cover;
+    }
+
+    .article-content {
+        padding: 1rem 1.2rem 1.1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: 100%;
+    }
+
+    .article-card h3 {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .article-excerpt {
+        margin: 0;
+        color: #7d6d66;
+        font-size: 0.9rem;
+    }
+
+    .article-link {
+        margin-top: auto;
+        align-self: flex-start;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #b25d3b;
+    }
+
+    .article-link:hover {
+        text-decoration: underline;
+    }
+
+    .contact-section {
+        margin-bottom:3.5rem;
+    }
+
+    .contact-section h2 {
+        text-align: center;
+        margin-bottom: 0.25rem;
+    }
+    .contact-section .section-subtitle {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        color:#7d6d66;
+        font-size:0.95rem;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: minmax(0,1fr) minmax(0,1.2fr);
+        gap:2rem;
+        align-items: flex-start;
+    }
+
+    .contact-info p{
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: #7d6d66;
+        font-size: 0.95rem;
+    }
+
+    .contact-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0.95rem;
+    }
+
+    .contact-list li+li {
+        margin-top: 0.4rem;
+    }
+
+    .contact-form {
+        background-color: #ffffff;
+        border-radius: 1rem;
+        padding: 1.5rem 1.5rem 1.7rem;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        font-size:0.9rem;
+    }
+
+    .form-field label, .form-field span {
+        font-weight: 600;
+        color: #3a2b28;
+    }
+
+    .form-field input[type="text"], .form-field input[type="email"], .form-field select, .form-field textarea {
+        padding: 0.55rem 0.7rem;
+        border-radius: 0.5rem;
+        border: 1px solid #e0d1c7;
+        font: inherit;
+        color: inherit;
+        background-color: #fffdf9;
+    }
+
+    .form-field textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+        outline:none;
+        border-color: #d47c5a;
+        box-shadow: 0 0 0 2px rgba(212, 124, 90, 0.18);
+    }
+
+   .form-consent {
+    font-size: 0.85rem;
+   }
+
+   .form-consent label {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+   }
+
+.collection-image {
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    border-radius:0.8rem;
+    margin-bottom:0.75rem;
+}
+
+#acasa,
+#slider,
+#colectii,
+#articole,
+#contact,
+#aromaterapie,
+#minimaliste,
+#cadouri {
+    scroll-margin-top: 5rem; 
+}
+
+.articles-more {
+    margin-top:1.5rem;
+    text-align:center;
+}
+
+
+#articol1,
+#articol2,
+#articol3 {
+    scroll-margin-top: 5rem;
+}
+
+.colections-more {
+    margin-top:1.5rem;
+    text-align:center;
+}
+
+
+/* stil pentru inima de favorite */
+ .wishlist-btn {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s, transform 0.2s;
+}
+
+
+.wishlist-btn.active {
+    color: #e74c3c; /* rosu cand e activ */
+}
+
+/* Atmosfera de seara*/
+body.mood-evening {
+    background: radial-gradient(circle at center, #2c1e1a 0%, #000000 100%) !important;
+    color: #f39c12 !important;
+}
+body.mood-evening .collection-card {
+    background: #3d2b24;
+    color: #ffe4cf;
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.2);
+}
+
+/* Atmosfera de dimineata */
+body.mood-morning {
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%) !important;
+    color: #2c3e50 !important;
+}
+
+
+#mood-container {
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    z-index: 1000;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    opacity: 0.9;
+    border: 1px solid #eee;
+}
+
+#mood-container label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+

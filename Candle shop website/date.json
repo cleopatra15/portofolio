@@ -1,0 +1,9 @@
+{
+    "recenzii": [
+        {"utilizator": "Ana", "comentariu": "Lumânările sunt minunate! Mirosul este plăcut și persistă mult timp.", "stele": 5},
+        {"utilizator": "Mihai", "comentariu": "Designul lumânărilor este elegant, dar mirosul nu este atât de puternic pe cât mă așteptam.", "stele": 4},
+        {"utilizator": "Ioana", "comentariu": "Am cumpărat o lumânare pentru cadou și a fost foarte apreciată. Cu siguranță voi mai comanda.", "stele": 5},
+        {"utilizator": "Radu", "comentariu": "Prețurile sunt puțin cam mari, dar calitatea merită.", "stele": 4},
+        {"utilizator": "Elena", "comentariu": "Livrarea a fost rapidă și ambalajul foarte frumos. Recomand!", "stele": 5}
+    ]
+}

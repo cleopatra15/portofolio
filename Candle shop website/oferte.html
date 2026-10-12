@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferte speciale · Candle Bliss</title>
+    <link rel="stylesheet" href="candles.css">
+    <script src="candles.js"></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="candles.html#acasa" class="logo">
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="logo-text">Candle bliss</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Navigare principala">
+            <ul>
+                <li><a href="candles.html#acasa">Acasa</a></li>
+                <li><a href="candles.html#slider">Inspiratie</a></li>
+                <li class="has-submenu">
+                    <a href="colectii.html#colectii">Colectii</a>
+                    <ul class="submenu">
+                        <li><a href="colectii.html#aromaterapie">Toate colectiile</a></li>
+                        <li><a href="#oferte">Oferte speciale</a></li>
+                        <li><a href="colectii.html#cadouri">Seturi cadou</a></li>
+                    </ul>
+                </li>
+                <li><a href="articole.html#articole">Articole</a></li>
+                <li><a href="candles.html#contact">Contact & Sugestii</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <section id="oferte" class="collections-section">
+            <h2>Oferte speciale</h2>
+            <p class="section-subtitle">Lumânări cu preț redus pentru o perioadă limitată. Stocurile sunt mici, așa că profită cât sunt disponibile produsele.</p>
+            <div class="collections-grid">
+                <article class="collection-card">
+                    <button class="wishlist-btn" title="Adaugă la favorite">❤</button>
+                    <img class="collection-image" src="https://media.istockphoto.com/id/1218006448/ro/fotografie/flori-uscate-de-lavand%C4%83-%C8%99i-culoarea-lavandei-lum%C3%A2n%C4%83rilor.jpg?s=612x612&w=0&k=20&c=jCU7PbZXnqWaPl8L0AlSnd70Vnr2hc55CCD-LnIhsMg=" alt="lumanare cu lavanda">
+                    <h3>Vis de lavandă · Colecție promo </h3>
+                    <p class="collection-desc">
+                       Lumânare din ceară de soia cu lavandă și vanilie, perfectă pentru seri liniștite. Această ediție are un recipient simplu, dar același parfum intens. 
+                    </p>
+                    <p class="collection-price"> <s>65 lei</s> · 52 lei </p>
+                    <p class="collection-tag">Reducere · Lavandă</p>
+                </article>
+
+                <article class="collection-card">
+                    <button class="wishlist-btn" title="Adaugă la favorite">❤</button>
+                    <img class = "collection-image" src="https://media.istockphoto.com/id/185910644/ro/fotografie/trei-lumanari-decorative.jpg?s=612x612&w=0&k=20&c=fJvcjnEoIQCfBal4qYo0Wh5y8H67LQgJEAxgH3i4hOY=" alt="set 3 lumanari mici">
+                    <h3>Calm & Cozy mini </h3>
+                    <p class="collection-desc">
+                       Trei lumânări mini cu arome complementare (vanilie, lemn cald, lavandă), ambalate într-o cutie simplă, fără decor suplimentar.
+                    </p>
+                    <p class="collection-price"> <s>120 lei</s> · 90 lei </p>
+                    <p class="collection-tag">Set cadou · Ofertă</p>
+                </article>
+
+                <article class="collection-card">
+                    <button class="wishlist-btn" title="Adaugă la favorite">❤</button>
+                    <img class="collection-image" src="https://media.istockphoto.com/id/1341265777/ro/fotografie/decor-rustic-pentru-cina-in-familie-de-sarbatori-de-craciun-piesa-centrala-cu-lumanare.jpg?s=612x612&w=0&k=20&c=wObuSNAt84kwxmLyROdFiPOosap0wmIXDhE1A4lCcKc=" alt="lumanari citrice">
+                    <h3>Dimineața cu citrice </h3>
+                    <p class="collection-desc">
+                      Note de portocală, lămâie și grepfrut. Perfectă pentru începuturi de zi energice. Stoc redus, lot de test in oferta specială.
+                    </p>
+                    <p class="collection-price"> <s>70 lei</s> · 58 lei </p>
+                    <p class="collection-tag">Citrice · Editie limitată</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="wishlist-area" style="display:none; padding: 2rem; background: rgba(255,255,255,0.5);">
+            <h2>Produsele tale preferate ❤️</h2>
+            <div id="wishlist-items" class="collections-grid"></div>
+        </section>
+        
+
+    </main>
+
+    <div id="mood-container">
+        <label for="mood-select">Alege atmosfera:</label>
+        <select id="mood-select">
+            <option value="original">Original (Candle Bliss)</option>
+            <option value="evening">Seară (Lumină caldă)</option>
+            <option value="morning">Dimineață (Fresh)</option>
+        </select>
+    </div>
+
+    
+    
+</body>
+</html>
