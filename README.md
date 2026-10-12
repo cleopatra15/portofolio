@@ -10,7 +10,7 @@ Welcome to my academic portfolio! This repository contains a collection of my un
 
 ## 🚀 Featured Projects
 
-### 1. [OOP Bookstore Management System](./OOP-Bookstore-Manager)
+### 1. [OOP Bookstore Management System](./OOP)
 A robust CRUD application designed to manage a bookstore's inventory and operations, built with advanced Object-Oriented Programming principles.
 * **Tech Stack:** C++ (STL)
 * **Key Features:** Beyond standard CRUD operations, the system includes dynamic discount applications, customer loyalty verification, and delivery time estimations.
