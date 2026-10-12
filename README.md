@@ -22,7 +22,7 @@ A comprehensive relational database system developed for a digital magazine plat
 * **Key Features:** Manages publications and clients, handles subscription activations, automated invoice generation, review collections, and sales statistical analysis.
 * **Technical Highlights:** Designed via Entity-Relationship modeling and normalized up to 5NF (with justified denormalization). Features complex queries (WITH clauses, outer joins, synchronized subqueries), execution plan optimization using indexes, and concurrent transaction isolation mechanisms.
 
-### 3. [Formal Languages & Automata Simulators](./Automata-Simulators)
+### 3. [Formal Languages & Automata Simulators](./Theory%20of%20computation)
 A collection of simulators mapping theoretical automata theory to executable code.
 * **Tech Stack:** Python, C++
 * **Key Features:** Simulators for Deterministic Finite Automata (DFA) and Non-Deterministic Finite Automata (NFA), implemented in both Python and C++ to contrast language paradigms.
