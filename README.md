@@ -28,12 +28,12 @@ A collection of simulators mapping theoretical automata theory to executable cod
 * **Key Features:** Simulators for Deterministic Finite Automata (DFA) and Non-Deterministic Finite Automata (NFA), implemented in both Python and C++ to contrast language paradigms.
 * **Technical Highlights:** Includes a Pushdown Automaton (PDA) simulator that was practically applied to create the logic for a terminal-based mini-game.
 
-### 4. [Interactive Candle Shop Website](./Web-Candle-Shop)
+### 4. [Interactive Candle Shop Website](./Candle%20shop%20website)
 A frontend e-commerce platform designed for a fictional candle business.
 * **Tech Stack:** HTML5, CSS3, Vanilla JavaScript
 * **Key Features:** A fully interactive, multi-page frontend website showcasing UI/UX principles, dynamic content rendering, and responsive design.
 
-### 5. [SLCheck - Symlink Integrity Validator](./Bash-SLCheck)
+### 5. [SLCheck - Symlink Integrity Validator](./SLCheck)
 A custom system utility conceived to validate file system integrity by detecting broken symbolic links within complex directory hierarchies.
 * **Tech Stack:** Bash (Shell Scripting), Linux
 * **Key Features:** Recursively parses file trees with advanced CLI controls (e.g., a `--follow-symlinks` flag) to dynamically allow or block symlink dereferencing.
