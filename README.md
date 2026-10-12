@@ -16,7 +16,7 @@ A robust CRUD application designed to manage a bookstore's inventory and operati
 * **Key Features:** Beyond standard CRUD operations, the system includes dynamic discount applications, customer loyalty verification, and delivery time estimations.
 * **Technical Highlights:** Implemented polymorphism, inheritance, custom exception handling, class and function templates, and STL algorithms. Structured using **Singleton** and **Abstract Factory** design patterns.
 
-### 2. [Digital Magazine Subscription Database](./DataBases - Magazine Platform)
+### 2. [Digital Magazine Subscription Database](./"DataBases - Magazine Platform")
 A comprehensive relational database system developed for a digital magazine platform to manage subscriptions, sales, and analytics.
 * **Tech Stack:** Oracle SQL
 * **Key Features:** Manages publications and clients, handles subscription activations, automated invoice generation, review collections, and sales statistical analysis.
